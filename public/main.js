@@ -25,8 +25,17 @@ const appendToDisplay = (data) => {
 //output: math expression
 const calculator = () => {
     try {
-        //set value and round num (use toFix method)
-        displayElement.value = parseFloat(eval(displayElement.value)).toFixed(2);
+        //1. declare and use eval to calculator
+        let result  = parseFloat(eval(displayElement.value)).toFixed(2);
+        /*2. if result 
+        is NaN(The only exception is NaN which is still not equivalent to any value, including itself.)
+        or is Infinity
+        then throw new exception*/  
+        if( isNaN(result) || result === Infinity){
+            throw new Error("");
+        }
+        //3. set value and round num (use toFix method)
+        displayElement.value = result;
     } catch (error) {
         //handle if math expression error
         displayElement.value = "Error";
