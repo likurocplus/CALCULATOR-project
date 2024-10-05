@@ -23,10 +23,10 @@ const appendToDisplay = (data) => {
 //iput: none 
 //process: set value display element = result (use eval method)
 //output: math expression
-const calculator = () => {
+const calculate = () => {
     try {
         
-        //1. declare and use eval to calculator
+        //1. declare and use eval to calcu
         let result  = parseFloat(eval(displayElement.value)).toFixed(2);
         
         /*2. if result 
